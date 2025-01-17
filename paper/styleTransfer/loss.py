@@ -20,7 +20,7 @@ class StyleLoss(nn.Module):
     def gram_matrix(self, x:torch.Tensor):
         b, c, h, w = x.size()
         features = x.view(b, c, h*w) # (b, N,M)
-        features_T = features.traspose(1, 2) # (b, M,N)
+        features_T = features.transpose(1, 2) # (b, M,N)
         G = torch.matmul(features, features_T) # (b,N, N)
         return G.div(b*c*h*w)
     

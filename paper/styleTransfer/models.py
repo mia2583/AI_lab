@@ -32,7 +32,7 @@ class StyleTransfer(nn.Module):
         else : 
             print("No layer type : Choose 'style' or 'content'")
             return 
-        # 종료 ㄱ관련 정의하기
+        # 종료 관련 정의하기
 
         for i in range(len(self.vgg19_features)):
             x = self.vgg19_features[i](x)
